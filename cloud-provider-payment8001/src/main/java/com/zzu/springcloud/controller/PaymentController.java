@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author zhoujiashen
+ * @author haofly
  * @Description 支付交易
  * @date 2021/1/17 22:40
  * @Version V1.0

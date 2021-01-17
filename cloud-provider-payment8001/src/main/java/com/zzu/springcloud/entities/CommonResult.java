@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author zhoujiashen
+ * @author haofly
  * @Description 公共结果封装
  * @date 2021/1/17 22:23
  * @Version V1.0

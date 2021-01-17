@@ -4,7 +4,7 @@ import com.zzu.springcloud.entities.Payment;
 import org.apache.ibatis.annotations.Param;
 
 /**
- * @author zhoujiashen
+ * @author haofly
  * @Description 支付服务接口
  * @date 2021/1/17 22:36
  * @Version V1.0
