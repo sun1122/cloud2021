@@ -1,0 +1,14 @@
+#Maven beginning
+target/
+#Maven Ending
+
+#Idea Begginning
+.idea/
+*.iml
+#Idea Ending
+
+#Eclipse Begginning
+.settings/
+.classpath
+.project
+#Eclipse Ending
