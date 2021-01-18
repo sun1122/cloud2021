@@ -29,7 +29,7 @@ public class PaymentController {
     public CommonResult create(Payment payment) {
 
         int result = paymentService.create(payment);
-        log.info("插入结果：" + result);
+        log.info("====插入结果：" + result);
         if (result > 0) {
             return new CommonResult<>(ErrorCodes.SUCCESS.code(),
                     ErrorCodes.SUCCESS.msg(), result);
