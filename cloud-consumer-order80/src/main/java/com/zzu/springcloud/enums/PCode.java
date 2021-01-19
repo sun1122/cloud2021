@@ -7,7 +7,7 @@ package com.zzu.springcloud.enums;
  * @Version V1.0
  * @注意事项 无
  */
-public enum Pcode {
+public enum PCode {
     /**  服务码 路径 **/
     PAYMENT_CREATE("0001","/payment/create"),
     PAYMENT_QUERY("0002","/payment/get/"),
@@ -15,7 +15,7 @@ public enum Pcode {
     private String code;
     private String url;
 
-    Pcode(String code, String url){
+    PCode(String code, String url){
         this.code = code;
         this.url = url;
     }

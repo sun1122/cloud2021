@@ -2,9 +2,8 @@ package com.zzu.springcloud.controller;
 
 import com.zzu.springcloud.entities.CommonResult;
 import com.zzu.springcloud.entities.Payment;
-import com.zzu.springcloud.enums.Pcode;
+import com.zzu.springcloud.enums.PCode;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,10 +28,10 @@ public class OrderController {
 
     @GetMapping("/consumer/payment/create")
     public CommonResult<Payment> create(Payment payment){
-        return restTemplate.postForObject(PAYMENT_URL+Pcode.PAYMENT_CREATE.url(),payment,CommonResult.class);
+        return restTemplate.postForObject(PAYMENT_URL+ PCode.PAYMENT_CREATE.url(),payment,CommonResult.class);
     }
     @GetMapping("/consumer/payment/get/{id}")
     public CommonResult<Payment> getPayment(@PathVariable("id") long id){
-        return restTemplate.getForObject(PAYMENT_URL+Pcode.PAYMENT_QUERY.url()+id,CommonResult.class);
+        return restTemplate.getForObject(PAYMENT_URL+ PCode.PAYMENT_QUERY.url()+id,CommonResult.class);
     }
 }
