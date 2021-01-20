@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-provider-payment8001</artifactId>
+    <artifactId>cloud-provider-payment8002</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -73,5 +73,4 @@
         </dependency>
 
     </dependencies>
-
 </project>
