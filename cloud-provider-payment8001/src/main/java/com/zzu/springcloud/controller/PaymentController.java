@@ -7,7 +7,11 @@ import com.zzu.springcloud.service.IPaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author haofly
@@ -25,6 +29,9 @@ public class PaymentController {
 
     @Value("${server.port}")
     private String port;
+
+    @Autowired
+    private DiscoveryClient discoveryClient;
 
     @PostMapping(value = "/payment/create")
     public CommonResult create(@RequestBody Payment payment) {
@@ -52,5 +59,19 @@ public class PaymentController {
                     ErrorCodes.USER_NOT_EXISTS.msg());
         }
 
+    }
+    @GetMapping(value = "/payment/discovery")
+    public Object getInfo(){
+        List<String> services = discoveryClient.getServices();
+        for (String service : services){
+            log.info(service);
+        }
+        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+        instances.forEach(instance -> log.info("ServiceId:{}, Host:{}, Port: {} ,Uri: {}",instance.getServiceId() ,
+                instance.getHost(),
+                instance.getPort() ,instance.getUri()));
+
+
+        return this.discoveryClient;
     }
 }
