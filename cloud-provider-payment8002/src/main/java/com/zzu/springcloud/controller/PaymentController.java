@@ -58,4 +58,14 @@ public class PaymentController {
     public String getPort(){
         return this.port;
     }
+
+    @GetMapping(value = "/payment/openfigen/timeout")
+    public String openFeignTimeOut(){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return port;
+    }
 }
