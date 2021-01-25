@@ -1,5 +1,6 @@
 package com.zzu.springclod.spi;
 
+import com.zzu.springclod.fallback.PaymentFallbackService;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @注意事项 无
  */
 @Component
-@FeignClient(value = "CLOUD-PROVIDER-HYSTRIX-PAYMENT")
+@FeignClient(name = "CLOUD-PROVIDER-HYSTRIX-PAYMENT",fallback = PaymentFallbackService.class)
 public interface IPaymentHystrixService {
 
     @GetMapping("/payment/hystrix/ok/{id}")
